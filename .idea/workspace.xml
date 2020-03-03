@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="6b13410b-cf6a-4c7b-9cc7-24a25d6e3d8a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Suggestion.py" beforeDir="false" afterPath="$PROJECT_DIR$/Suggestion.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jinja2_test.html" beforeDir="false" afterPath="$PROJECT_DIR$/jinja2_test.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kura_menu.csv" beforeDir="false" afterPath="$PROJECT_DIR$/kura_menu.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/output.tmpl" beforeDir="false" afterPath="$PROJECT_DIR$/output.tmpl" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -85,7 +84,7 @@
       <workItem from="1583137274022" duration="319000" />
       <workItem from="1583138105150" duration="15181000" />
       <workItem from="1583172295036" duration="2054000" />
-      <workItem from="1583247137075" duration="4776000" />
+      <workItem from="1583247137075" duration="5805000" />
     </task>
     <servers />
   </component>
