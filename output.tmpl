@@ -100,6 +100,7 @@
     <p>くら寿司のメニューページがゴミなのでメニューデータは人力です。期間限定商品に誤りがある可能性があります</p>
     <form method="get" class="form">
         <select name="money">
+            <option value="{{ money }}">{{ money }}</option>
             {% for n in range(5) %}
                 <option value="{{ (n+1)*600 }}">{{ (n+1)*600 }}</option>
             {% endfor %}
