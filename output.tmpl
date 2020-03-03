@@ -1,10 +1,111 @@
 <html>
 <body>
+<style type="text/css">
+    body {
+        position: relative;
+        background: #2b7594;
+        margin: 0;
+    }
+
+    .content {
+        padding: 10px;
+    }
+
+    .header {
+        position: relative;
+        width: 100%;
+        height: 17vh;
+        text-align: center;
+        background: black;
+        color: azure;
+    }
+
+    .form {
+        position: relative;
+    }
+
+    .form select {
+        position: absolute;
+        width: 20%;
+        height: 4vh;
+        top: 0;
+        left: 10%;
+        font-size: 3vw;
+    }
+
+    .form button {
+        position: absolute;
+        width: 20%;
+        height: 4vh;
+        top: 0;
+        left: 30%;
+        font-size: 3vw;
+    }
+
+    .header h1 {
+        font-size: 6vw;
+        line-height: 8vh;
+        margin: 0;
+    }
+
+    .header p {
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+    }
+
+    .item {
+        position: relative;
+        height: 8vh;
+        width: 100%;
+        font-size: 2vh;
+        margin: 10px 20px 10px 0;
+        border-radius: 2px;
+        background: azure;
+    }
+
+    .item svg {
+        width: 8vh;
+        height: 8vh;
+        position: absolute;
+        top: 50%;
+        left: 10px;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+    }
+
+    .item b {
+        position: absolute;
+        left: 10vh;
+        top: 2vh;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+    }
+
+    .item p {
+        position: absolute;
+        left: 10vh;
+        top: 3vh;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+    }
+
+
+</style>
+
 
 
 <div class="header">
     <h1>くら寿司メニューガチャ{{ money }}</h1>
     <p>くら寿司のメニューページがゴミなのでメニューデータは人力です。期間限定商品に誤りがある可能性があります</p>
+    <form method="get" class="form">
+        <select name="money">
+            {% for n in range(5) %}
+                <option value="{{ (n+1)*600 }}">{{ (n+1)*600 }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit">ガチャる！</button>
+    </form>
 </div>
 <div class="content">
     {% for item in items %}
@@ -163,74 +264,5 @@
         </div>
     {% endfor %}
 </div>
-<style type="text/css">
-    body {
-        position: relative;
-        background: #2b7594;
-        margin: 0;
-    }
-
-    .content {
-        padding: 10px;
-    }
-
-    .header {
-        position: relative;
-        width: 100%;
-        height: 17vh;
-        text-align: center;
-        background: black;
-        color: azure;
-        border-radius: 5px;
-        margin-bottom: 10px;
-    }
-
-    .header h1 {
-        font-size: 6vw;
-        line-height: 17vh;
-    }
-
-    .header p {
-        position: absolute;
-        width: 100%;
-        bottom: 0;
-    }
-
-    .item {
-        position: relative;
-        height: 8vh;
-        width: 100%;
-        font-size: 2vh;
-        margin: 10px 20px 10px 0;
-        border-radius: 2px;
-        background: azure;
-    }
-
-    .item svg {
-        width: 8vh;
-        height: 8vh;
-        position: absolute;
-        top: 50%;
-        left: 10px;
-        -webkit-transform: translateY(-50%);
-        transform: translateY(-50%);
-    }
-
-    .item b {
-        position: absolute;
-        left: 10vh;
-        top: 2vh;
-        -webkit-transform: translateY(-50%);
-        transform: translateY(-50%);
-    }
-
-    .item p {
-        position: absolute;
-        left: 10vh;
-        top: 3vh;
-        -webkit-transform: translateY(-50%);
-        transform: translateY(-50%);
-    }
-</style>
 </body>
 </html>
