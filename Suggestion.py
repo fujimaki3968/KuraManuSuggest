@@ -7,7 +7,7 @@ env = Environment(loader=FileSystemLoader('./', encoding='utf8'))
 with open('kura_menu.csv') as fp:
     item_list = list(csv.reader(fp))
 
-item_list = sorted(item_list, key=lambda x: x[1])
+item_list = sorted(item_list, key=lambda x: int(x[1]))
 
 def binary_search(items, num):
     length = len(items)
@@ -37,12 +37,20 @@ def main_function(event, context):
 
 def generate_html(item_list, money):
     all_money = money
+    sum_cal = 0
     suggest_list = []
-    while(all_money>=100):
-        list_range = binary_search(item_list, money)
+    while(all_money >= 100):
+        list_range = binary_search(item_list, all_money)
         tmp = item_list[R(0, list_range)]
         suggest_list.append(tmp)
+        sum_cal += int(tmp[3])
         all_money -= int(tmp[1])
+
     tmpl = env.get_template('output.tmpl')
-    html = tmpl.render(items=suggest_list, money=money, )
+    html = tmpl.render(items=suggest_list, money=money, sum=money-all_money, cal=sum_cal,)
     return html
+
+html = generate_html(item_list, 1000)
+
+with open('jinja2_test.html',mode='w') as f:
+    f.write(str(html))
